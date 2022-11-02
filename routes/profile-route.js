@@ -2,7 +2,8 @@ const router = require("express").Router();
 const Post = require("../models/post-model");
 //middleware
 const authCheck = (req, res, next) => {
-  console.log(req.user);
+  console.log(req.originalUrl);
+  req.session.returnTo = req.originalUrl;
   if (!req.isAuthenticated()) {
     res.redirect("/auth/login");
   } else {
