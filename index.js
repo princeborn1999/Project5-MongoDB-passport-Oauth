@@ -7,7 +7,7 @@ const authRoute = require("./routes/auth-route");
 const profileRoute = require("./routes/profile-route");
 
 require("./config/passport");
-const passport = require("passport");
+const passport = require("passport"); //因為有bug才加此行
 const cookieSession = require("cookie-session");
 
 mongoose

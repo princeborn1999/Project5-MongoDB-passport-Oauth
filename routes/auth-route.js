@@ -4,7 +4,10 @@ const passport = require("passport");
 router.get("/login", (req, res) => {
   res.render("login");
 });
-
+router.get("/logout", (req, res) => {
+  req.logOut();
+  res.redirect("/");
+});
 router.get(
   "/google",
   passport.authenticate("google", {
